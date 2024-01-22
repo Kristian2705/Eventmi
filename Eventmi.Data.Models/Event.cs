@@ -1,15 +1,18 @@
 ﻿namespace Eventmi.Data.Models
 {
-    using Eventmi.Common;
-    using Eventmi.Data.Models.Enums;
-    using System;
-    using System.ComponentModel.DataAnnotations;
-    public class Event
+	using Eventmi.Common;
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel.DataAnnotations;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	public class Event
 	{
 		[Key]
         public int Id { get; set; }
 		[Required]
-        [MaxLength(EntityValidationConstants.Event.NameMaxLength)]
+		[MaxLength(EntityValidationConstants.Event.NameMaxLength)]
         public string? Name { get; set; }
 		[Required]
         public DateTime Start { get; set; }
@@ -17,8 +20,5 @@
         public DateTime End { get; set; }
 		[Required]
         public string? Place { get; set; }
-
-        [Required]
-        public Category Category { get; set; }
     }
 }
