@@ -1,6 +1,11 @@
 ﻿namespace Eventmi.Controllers
 {
-	public class EventController
+	using Microsoft.AspNetCore.Mvc;
+	public class EventController : Controller
 	{
+		public IActionResult AddEvent()
+		{
+			return View();
+		}
 	}
 }
