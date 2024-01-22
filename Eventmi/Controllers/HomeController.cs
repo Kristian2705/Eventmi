@@ -1,10 +1,10 @@
-﻿using Eventmi.Web.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-
-namespace Eventmi.Controllers
+﻿namespace Eventmi.Controllers
 {
-    public class HomeController : Controller
+	using Microsoft.AspNetCore.Mvc;
+	using System.Diagnostics;
+
+	using Eventmi.Web.ViewModels;
+	public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 

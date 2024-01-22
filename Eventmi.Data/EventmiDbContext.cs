@@ -2,11 +2,15 @@
 {
 	using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 	using Microsoft.EntityFrameworkCore;
-	public class ApplicationDbContext : IdentityDbContext
+
+	using Eventmi.Data.Models;
+	public class EventmiDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public EventmiDbContext(DbContextOptions<EventmiDbContext> options)
             : base(options)
         {
         }
+
+        public DbSet<Event> Events { get; set; }
     }
 }
