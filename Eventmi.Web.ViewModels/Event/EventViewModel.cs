@@ -1,15 +1,10 @@
-﻿using static Eventmi.Common.EntityValidationConstants.Event;
-using Eventmi.Data.Models.Enums;
-using System;
-using System.Collections.Generic;
+﻿using Eventmi.Data.Models.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static Eventmi.Common.EntityValidationConstants.Event;
 
 namespace Eventmi.Web.ViewModels.Event
 {
-	public class EventViewModel
+    public class EventViewModel
 	{
         public int Id { get; set; }
         [StringLength(NameMaxLength, MinimumLength = NameMinLength)]
@@ -18,5 +13,8 @@ namespace Eventmi.Web.ViewModels.Event
         public DateTime EndDate { get; set; }
         [EnumDataType(typeof(Category))]
         public Category Category { get; set; }
+
+        [StringLength(PlaceMaxLength, MinimumLength = PlaceMinLength)]
+        public string? Place { get; set; }
     }
 }

@@ -1,7 +1,8 @@
 ﻿namespace Eventmi.Controllers
 {
 	using Eventmi.Services.Contracts;
-	using Microsoft.AspNetCore.Mvc;
+    using Eventmi.Web.ViewModels.Event;
+    using Microsoft.AspNetCore.Mvc;
 	public class EventController : Controller
 	{
 		private readonly IEventService eventService;
@@ -9,10 +10,36 @@
         {
             eventService = _eventService;
         }
-        [HttpPost]
-		public async Task<IActionResult> AddEventAsync()
+
+		/// <summary>
+		/// The main Event view
+		/// </summary>
+		/// <returns></returns>
+		public IActionResult Index()
 		{
 			return View();
+		}
+
+		/// <summary>
+		/// Add Event view
+		/// </summary>
+		/// <returns></returns>
+        [HttpGet]
+        public IActionResult AddEvent()
+        {
+			return View();
+        }
+
+		/// <summary>
+		/// The action of adding an event
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
+        [HttpPost]
+		public async Task<IActionResult> AddEventAsync(EventViewModel model)
+		{
+			await eventService.AddAsync(model);
+			return RedirectToAction("Index");
 		}
 	}
 }
