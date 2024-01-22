@@ -1,4 +1,4 @@
-﻿using Eventmi.Models;
+﻿using Eventmi.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

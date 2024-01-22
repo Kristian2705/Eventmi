@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.23" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Eventmi.Common\Eventmi.Common.csproj" />
+    <ProjectReference Include="..\Eventmi.Data\Eventmi.Data.csproj" />
+    <ProjectReference Include="..\Eventmi.Web.ViewModels\Eventmi.Web.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>

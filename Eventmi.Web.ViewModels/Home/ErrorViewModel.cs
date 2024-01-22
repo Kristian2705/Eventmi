@@ -1,4 +1,4 @@
-namespace Eventmi.Models
+namespace Eventmi.Web.ViewModels
 {
     public class ErrorViewModel
     {
