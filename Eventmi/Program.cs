@@ -4,6 +4,8 @@ namespace Eventmi
 	using Microsoft.EntityFrameworkCore;
 
 	using Data;
+	using Eventmi.Services.Contracts;
+	using Eventmi.Services;
 
 	public class Program
     {
@@ -23,6 +25,8 @@ namespace Eventmi
                 .AddEntityFrameworkStores<EventmiDbContext>();
 
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IEventService, EventServie>();
 
             WebApplication app = builder.Build();
 

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Eventmi.Common\Eventmi.Common.csproj" />
-    <ProjectReference Include="..\Eventmi.Data.Models\Eventmi.Data.Models.csproj" />
+    <ProjectReference Include="..\Eventmi.Data\Eventmi.Data.csproj" />
+    <ProjectReference Include="..\Eventmi.Web.ViewModels\Eventmi.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

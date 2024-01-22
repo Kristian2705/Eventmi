@@ -12,9 +12,9 @@
         [MaxLength(EntityValidationConstants.Event.NameMaxLength)]
         public string? Name { get; set; }
 		[Required]
-        public DateTime Start { get; set; }
+        public DateTime StartDate { get; set; }
 		[Required]
-        public DateTime End { get; set; }
+        public DateTime EndDate { get; set; }
 		[Required]
         public string? Place { get; set; }
 
