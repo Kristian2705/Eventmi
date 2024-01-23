@@ -1,7 +1,7 @@
 ﻿using Eventmi.Common.Validations;
 using Eventmi.Data.Models.Enums;
 using System.ComponentModel.DataAnnotations;
-using static Eventmi.Common.EntityValidationConstants.Event;
+using static Eventmi.Common.Constants.EntityValidationConstants.Event;
 
 namespace Eventmi.Web.ViewModels.Event
 {

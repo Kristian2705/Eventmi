@@ -1,6 +1,6 @@
 ﻿namespace Eventmi.Data.Models
 {
-    using Eventmi.Common;
+    using Eventmi.Common.Constants;
     using Eventmi.Data.Models.Enums;
     using System;
     using System.ComponentModel.DataAnnotations;
