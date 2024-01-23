@@ -2,6 +2,7 @@
 using Eventmi.Data.Models;
 using Eventmi.Services.Contracts;
 using Eventmi.Web.ViewModels.Event;
+using System.Globalization;
 
 namespace Eventmi.Services
 {
@@ -16,16 +17,15 @@ namespace Eventmi.Services
 		{
 			if (context.Events.Any(e => e.Id == model.Id))
 			{
-				throw new ArgumentException();
+				throw new ArgumentException("This event already exists!");
 			}
 			Event data = new()
 			{
-				Id = model.Id,
 				Name = model.Name,
+				StartDate = model.StartDate/*DateTime.ParseExact(model.StartDate.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture)*/,
+				EndDate = model.EndDate/*DateTime.ParseExact(model.EndDate.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture)*/,
+				Place = model.Place,
 				Category = model.Category,
-				StartDate = model.StartDate,
-				EndDate = model.EndDate,
-				Place = model.Place
 			};
 			await context.Events.AddAsync(data);
 			await context.SaveChangesAsync();

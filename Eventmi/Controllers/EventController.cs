@@ -35,9 +35,12 @@
 		/// </summary>
 		/// <param name="model"></param>
 		/// <returns></returns>
-        [HttpPost]
 		public async Task<IActionResult> AddEventAsync(EventViewModel model)
 		{
+			if(!ModelState.IsValid)
+			{
+				RedirectToAction("AddEvent");
+			}
 			await eventService.AddAsync(model);
 			return RedirectToAction("Index");
 		}

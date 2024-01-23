@@ -6,14 +6,18 @@ namespace Eventmi.Web.ViewModels.Event
 {
     public class EventViewModel
 	{
-        public int Id { get; set; }
+        [Required]
         [StringLength(NameMaxLength, MinimumLength = NameMinLength)]
 		public string? Name { get; set; }
+        [Required]
         public DateTime StartDate { get; set; }
+        [Required]
         public DateTime EndDate { get; set; }
+        [Required]
         [EnumDataType(typeof(Category))]
         public Category Category { get; set; }
 
+        [Required]
         [StringLength(PlaceMaxLength, MinimumLength = PlaceMinLength)]
         public string? Place { get; set; }
     }

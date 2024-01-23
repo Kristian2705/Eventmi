@@ -1,16 +1,32 @@
-﻿<form asp-controller="Event" asp-action="AddEventAsync" method="post">
+﻿@using Eventmi.Web.ViewModels.Event;
+@model EventViewModel
+
+<form asp-controller="Event" asp-action="AddEvent" method="post">
     <div class="mb-3">
-        <label for="EventName" class="form-label">Event name</label>
-        <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <label asp-for="Name" class="form-label">Event name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="input-group date">
+        <label asp-for="StartDate" class="form-label">Start date</label>
+        <input asp-for="StartDate" type="text" class="form-control">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+    <div class="input-group date">
+        <label asp-for="EndDate" class="form-label">End Date</label>
+        <input asp-for="EndDate" type="text" class="form-control">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <label asp-for="Place" class="form-label">Place</label>
+        <input asp-for="Place" class="form-control">
     </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div class="mb-3">
+        <label asp-for="Category" class="form-label">Category</label>
+        <input asp-for="Category" class="form-control">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
