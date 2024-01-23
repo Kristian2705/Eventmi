@@ -39,7 +39,7 @@
 		{
 			if(!ModelState.IsValid)
 			{
-				RedirectToAction("AddEvent");
+				return RedirectToAction("AddEvent");
 			}
 			await eventService.AddAsync(model);
 			return RedirectToAction("Index");
