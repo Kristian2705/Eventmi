@@ -5,5 +5,7 @@ namespace Eventmi.Services.Contracts
     public interface IEventService
 	{
 		Task AddAsync(EventViewModel model);
+
+		Task<IEnumerable<EventViewModel>> ViewAll();
 	}
 }

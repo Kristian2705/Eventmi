@@ -13,7 +13,7 @@ namespace Eventmi
         {
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-            string connectionString = builder.Configuration.GetConnectionString("TyanataConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            string connectionString = builder.Configuration.GetConnectionString("DogeConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<EventmiDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
