@@ -17,7 +17,8 @@
 		/// <returns></returns>
 		public IActionResult Index()
 		{
-			return View();
+			var events = eventService.ViewAll();
+			return View(events);
 		}
 
 		/// <summary>
