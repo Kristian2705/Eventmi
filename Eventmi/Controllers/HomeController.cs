@@ -12,7 +12,10 @@
         {
             _logger = logger;
         }
-
+        /// <summary>
+        /// This is my first summary
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             return View();
