@@ -21,8 +21,8 @@ namespace Eventmi.Services
 			Event data = new()
 			{
 				Name = model.Name,
-				StartDate = DateTime.ParseExact(model.StartDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture),
-				EndDate = DateTime.ParseExact(model.EndDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+				StartDate = DateTime.ParseExact(model.StartDate!.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+				EndDate = DateTime.ParseExact(model.EndDate!.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture),
 				Place = model.Place,
 				Category = model.Category,
 			};
@@ -35,11 +35,17 @@ namespace Eventmi.Services
 			throw new NotImplementedException();
 		}
 
-		public Task EditAsync(EventViewModel model)
+		public async Task EditAsync(EventViewModel model)
 		{
-			var eventToEdit = GetByName(model.Name);
+			var eventToEdit = await GetByName(model.Name!);
 
+			eventToEdit.Name = model.Name;
+			eventToEdit.StartDate = model.StartDate;
+			eventToEdit.EndDate = model.EndDate;
+			eventToEdit.Place = model.Place;
+			eventToEdit.Category = model.Category;
 
+			await context.SaveChangesAsync();
 		}
 
 		public async Task<IEnumerable<EventViewModel>> ViewAll()
@@ -61,7 +67,7 @@ namespace Eventmi.Services
 
 		private async Task<EventViewModel> GetByName(string name)
 		{
-			var model = await context.Events.FirstOrDefaultAsync(e => e.Name.Equals(name));
+			var model = await context.Events.FirstOrDefaultAsync(e => e.Name!.Equals(name));
 
 			if(model == null)
 			{
