@@ -30,6 +30,18 @@ namespace Eventmi.Services
 			await context.SaveChangesAsync();
 		}
 
+		public Task DeleteAsync(int id)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task EditAsync(EventViewModel model)
+		{
+			var eventToEdit = GetByName(model.Name);
+
+
+		}
+
 		public async Task<IEnumerable<EventViewModel>> ViewAll()
 		{
 			var models = await context.Events
@@ -45,6 +57,25 @@ namespace Eventmi.Services
 				.ToListAsync();
 
 			return models;
+		}
+
+		private async Task<EventViewModel> GetByName(string name)
+		{
+			var model = await context.Events.FirstOrDefaultAsync(e => e.Name.Equals(name));
+
+			if(model == null)
+			{
+				throw new ArgumentNullException(nameof(model));
+			}
+
+			return new EventViewModel()
+			{
+				Name = model.Name,
+				StartDate = model.StartDate.ToString("dd/MM/yyyy"),
+				EndDate = model.EndDate.ToString("dd/MM/yyyy"),
+				Place = model.Place,
+				Category = model.Category
+			};
 		}
 	}
 }
