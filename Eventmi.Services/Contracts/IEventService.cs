@@ -9,7 +9,7 @@ namespace Eventmi.Services.Contracts
 
 		Task<IEnumerable<EventViewModel>> ViewAll();
 
-		Task EditAsync(int id);
+		Task EditAsync(EventViewModel model);
 
 		Task DeleteAsync(int id);
 	}

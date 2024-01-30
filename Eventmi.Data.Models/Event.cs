@@ -6,6 +6,7 @@
     using System.ComponentModel.DataAnnotations;
     public class Event
 	{
+        //Comments should be added
 		[Key]
         public int Id { get; set; }
 		[Required]
