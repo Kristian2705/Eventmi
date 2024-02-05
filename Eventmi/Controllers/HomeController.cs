@@ -26,11 +26,6 @@
             return View();
         }
 
-        public IActionResult FullPieced()
-        {
-            return View();
-        }
-
         public IActionResult About()
         {
             return View();

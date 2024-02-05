@@ -15,9 +15,9 @@
 		/// The main Event view
 		/// </summary>
 		/// <returns></returns>
-		public IActionResult Index()
+		public async Task<IActionResult> Index()
 		{
-			var events = eventService.ViewAll();
+			var events = await eventService.ViewAllAsync();
 			return View(events);
 		}
 

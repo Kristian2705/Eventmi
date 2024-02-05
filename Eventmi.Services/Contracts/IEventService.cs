@@ -7,7 +7,7 @@ namespace Eventmi.Services.Contracts
 	{
 		Task AddAsync(EventViewModel model);
 
-		Task<IEnumerable<EventViewModel>> ViewAll();
+		Task<IEnumerable<EventViewModel>> ViewAllAsync();
 
 		Task EditAsync(EventViewModel model);
 

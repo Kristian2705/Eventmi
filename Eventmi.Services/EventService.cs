@@ -48,7 +48,7 @@ namespace Eventmi.Services
 			await context.SaveChangesAsync();
 		}
 
-		public async Task<IEnumerable<EventViewModel>> ViewAll()
+		public async Task<IEnumerable<EventViewModel>> ViewAllAsync()
 		{
 			var models = await context.Events
 				.AsNoTracking()
