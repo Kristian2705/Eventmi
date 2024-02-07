@@ -1,8 +1,33 @@
 ﻿@using Eventmi.Web.ViewModels.Event
 @model List<EventViewModel>
 
-<h2>All events will be displayed here</h2>
-<a asp-controller="Event" asp-action="AddEvent">Add Event</a>
-<p>edit option</p>
-<p>details option</p>
-<p>delete option</p>
+<section class="text-center m-3 p-3">
+    <h2 class="display-4 text-primary fw-bold">All events will be displayed here</h2>
+    <div class="d-grid gap-2 mb-2">
+        <a asp-controller="Event" asp-action="AddEvent" class="btn btn-danger rounded-3">Add Post</a>
+    </div>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="Sports" class="form-control-color alert-danger">Sports</option>
+        <option value="Games">Games</option>
+        <option value="Foods">Foods</option>
+        <option value="Sales">Sales</option>
+    </select>
+    <section class="d-flex flex-md-grow-1 gap-3 m-4">
+        @if (Model.Any())
+        {
+            @foreach (var e in Model)
+            {
+                <div class="card bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header text-light fw-bold">@e.Name</div>
+                    <div class="card-body">
+                        <p>@e.StartDate</p>
+                        <p>@e.EndDate</p>
+                        <p>@e.Place</p>
+                        <p>@e.Category</p>
+                    </div>
+                </div>
+            }
+        }
+    </section>
+</section>
