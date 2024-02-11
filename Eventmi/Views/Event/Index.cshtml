@@ -8,15 +8,15 @@
     </div>
     <select class="form-select" aria-label="Default select example">
         <option selected>Open this select menu</option>
-        <option value="Sports" class="form-control-color alert-danger">Sports</option>
+        <option value="Sports" class="form-control-color alert-info">Sports</option>
         <option value="Games">Games</option>
-        <option value="Foods">Foods</option>
+        <option value="Foods" class="form-control-color alert-info">Foods</option>
         <option value="Sales">Sales</option>
     </select>
-    <section class="d-flex flex-md-grow-1 gap-3 m-4">
+    <section class="gap-5 m-4 justify-content-center">
         @if (Model.Any())
         {
-            @foreach (var e in Model)
+            foreach (var e in Model)
             {
                 <div class="card bg-info mb-3" style="max-width: 18rem;">
                     <div class="card-header text-light fw-bold">@e.Name</div>
